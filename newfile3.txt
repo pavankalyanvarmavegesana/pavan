@@ -1,0 +1,2 @@
+This is newfile 3 in masterbranch.
+must not seen in first and second branch untill i merge.
