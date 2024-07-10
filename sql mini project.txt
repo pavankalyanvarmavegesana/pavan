@@ -1,0 +1,58 @@
+-- create table categories(category_id int primary key,category_name varchar(255) unique not null);
+-- insert into categories values(101,'category1');
+-- insert into categories values(102,'category2');
+-- insert into categories values(103,'category3');
+-- insert into categories values(104,'category4');
+
+-- select * from categories;
+
+-- create table publishers(publisher_id int primary key,publisher_name varchar(255) not null);
+
+-- insert into publishers values(101,'publisher1');
+-- insert into publishers values(102,'publisher2');
+-- insert into publishers values(103,'publisher3');
+-- insert into publishers values(104,'publisher4');
+
+-- -- select * from publishers;
+
+
+-- create table books(book_id int primary key,
+-- title varchar(255) not null,
+-- isbn varchar(30) unique not null,
+-- publication_year int not null,
+-- publisher_id int,
+-- category_id int,
+-- author_name varchar(255) check (author_name!=''),
+-- foreign key (publisher_id) references publishers(publisher_id) on delete cascade,
+-- foreign key (category_id) references categories(category_id) on delete cascade);
+
+-- insert into books values(1,'title1',"2345",2023,101,101,'pavan');
+-- insert into books values(2,'title1',"2346",2023,102,102,'pavan1');
+-- insert into books values(3,'title1',"2347",2024,103,103,'pavan2');
+-- insert into books values(4,'title1',"2348",2025,104,104,'pavan3');
+
+-- select * from books;
+
+-- create table users(user_id int primary key,
+--  user_name varchar(255) not null,
+--  email varchar(255) unique not null,
+--  phone_number int unique not null);
+--  
+-- insert into users values(1,'pavankalyan','pavan@gmail.com',1234567890);
+-- insert into users values(2,'pavankalyan2','pavan2@gmail.com',1234567891);
+-- insert into users values(3,'pavankalyan3','pavan3@gmail.com',1234567892);
+-- insert into users values(4,'pavankalyan4','pavan4@gmail.com',1234567893);
+
+
+-- create table borrowings(borrow_id int primary key,
+-- user_id int,
+-- book_id int,
+-- borrow_date int not null,
+-- return_date int not null,
+-- foreign key (user_id) references users(user_id) on delete cascade,
+-- foreign key (book_id) references books(book_id) on delete cascade);
+
+-- insert into borrowings values(2001,1,1,24,30);
+-- insert into borrowings values(2002,2,2,25,31);
+-- insert into borrowings values(2003,3,3,26,32);
+-- insert into borrowings values(2004,3,4,27,33);
