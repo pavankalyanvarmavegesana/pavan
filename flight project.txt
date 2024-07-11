@@ -1,0 +1,144 @@
+
+insert into fare(fare, flight_date, flight_number) values ('100', '22-JAN-16', 'BF100');
+insert into fare(fare, flight_date, flight_number) values ('101', '22-JAN-16', 'BF101');
+insert into fare( fare, flight_date, flight_number) values ('102', '22-JAN-16', 'BF102');
+insert into fare( fare, flight_date, flight_number) values ('103', '22-JAN-16', 'BF103');
+insert into fare( fare, flight_date, flight_number) values ( '104', '22-JAN-16', 'BF104');
+insert into fare(fare, flight_date, flight_number) values ( '105', '22-JAN-16', 'BF105');
+insert into fare(fare, flight_date, flight_number) values ( '106', '22-JAN-16', 'BF106');
+
+
+select * from fare;
+
+SHOW DATABASES;
+
+create database searchuser;
+
+use searchuser;
+
+
+create table fare (fare_id INT primary key auto_increment,currency varchar(255),price varchar(255));
+
+insert into fare(currency,price) values ('USD', 100);
+-- insert into fare(currency,price) values ('USD', 101);
+-- insert into fare(currency,price) values ('USD', 102);
+-- insert into fare(currency,price) values ('USD', 103);
+-- insert into fare(currency,price) values ( 'USD', 104);
+-- insert into fare(currency,price) values ( 'USD', 105);
+-- insert into fare(currency,price) values ( 'USD', 106);
+
+create table inventory (inv_id INT primary key ,count int not null);
+
+
+insert into inventory (inv_id,count)values (1,100);
+insert into inventory (inv_id,count)values (6,100);
+insert into inventory (inv_id,count)values (5,100);
+insert into inventory (inv_id,count)values (4,100);
+insert into inventory (inv_id,count)values (3,100);
+insert into inventory (inv_id,count)values (2,100);
+
+
+create table flight (id INT primary key, destination varchar(255), flight_date varchar(255), 
+create table fare(id INT AUTO_INCREMENT ,fare varchar(255),flight_date 
+varchar(255),flight_number varchar(255) , PRIMARY KEY(id)) ;
+
+insert into flight values(1,'banglore','27-jan-2024','bh-001','banglore',1,2);
+
+
+
+
+
+
+
+create table flight (id INT primary key,
+ destination varchar(255), 
+ flight_date varchar(255), 
+flight_number varchar(255), 
+origin varchar(255),
+fare_id int,
+inv_id int,
+foreign key(fare_id) references fare(fare_id) on delete cascade,
+foreign key(inv_id) references inventory(inv_id) on delete cascade);
+
+
+insert into flight values(1,'banglore','27-jan-2024','bh-001','banglore',1,2);
+
+select * from flight;
+
+delete from fare where fare_id=1;
+select * from flight;
+
+
+create schema bookingschema;
+
+use bookingschema;
+
+create table inventory (id INT primary key AUTO_INCREMENT, available INT not null, flight_date 
+VARCHAR(255), flight_number VARCHAR(255));
+insert into inventory (flight_number, flight_date, available) values ('BF100', '22-JAN-16', 100);
+insert into inventory (flight_number, flight_date, available) values ('BF101', '22-JAN-16', 100);
+insert into inventory (flight_number, flight_date, available) values ('BF102', '22-JAN-16', 100);
+insert into inventory (flight_number, flight_date, available) values ('BF103', '22-JAN-16', 100);
+insert into inventory (flight_number, flight_date, available) values ('BF104', '22-JAN-16', 100);
+insert into inventory (flight_number, flight_date, available) values ('BF105', '22-JAN-16', 100);
+insert into inventory (flight_number, flight_date, available) values ('BF106', '22-JAN-16', 100);
+
+
+select * from inventory;
+
+drop table booking_record;
+
+
+create table booking_record(passenger_id int primary key auto_increment,
+booking_date timestamp
+,destination varchar(255),
+price int,
+flight_date varchar(255),
+flight_number varchar(255),
+origin varchar (255),
+flight_status varchar(255));
+
+
+insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,flight_status)
+values('2024-07-11','america',2000000,'25-jan-2025','BH-00123321','banglore','depauture');
+
+insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,flight_status)
+values('2024-07-13','america',2000000,'25-jan-2025','BH-00123321','banglore','depauture');
+insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,flight_status)
+values('2024-07-13','america',2000000,'25-jan-2025','BH-00123321','banglore','depauture');
+insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,flight_status)
+values('2024-07-13','america',2000000,'25-jan-2025','BH-00123321','banglore','depauture');
+
+
+drop table passenger;
+
+create table passenger(passenger_id int primary key auto_increment,
+first_name varchar(255),
+gender varchar(255),
+last_name varchar(255),
+foreign key (passenger_id) references booking_record(passenger_id) on delete cascade);
+
+insert into passenger(first_name,gender,last_name)values('pavan','male','kalyan');
+
+select * from booking_record;
+
+delete from passenger where passenger_id=1;
+
+
+
+
+
+
+
+
+delete from passenger where id=1;
+
+
+
+
+
+
+
+
+
+
