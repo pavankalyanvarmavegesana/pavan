@@ -1,0 +1,493 @@
+//mainly used for code reusability
+//inheritance is a mechanism in which one class aquires all the properties and behaviour of anotherclass.
+//with specific relation
+//java terminology
+//super--parent
+//sub--child
+//two types of  1) multilevel inheritance 2)multiple inheritance---not applicable in class
+//super--if we want call parent properties specificly in child class then we use super key word.
+//we can apply multiple inheritance in interface.
+sum =10;
+int  sum%2==0 ? <even> :<falase>
+___________________________________________________________________________________________________________
+
+1.WHICH OF THE FOLLOWING IS THE US COMMON STRING DATE FORMAT IN JAVA
+ANS: “MM/dd/yyyy”.
+--------------------------------------------------------------------------
+2.public class Matcher {
+ 
+public static void main(String[] args) {
+ 
+int numl, num2;
+ 
+num1 = Integer.parseInt(args[0]);
+ 
+num2 = Integer.parseInt(args[1]);
+ 
+assert num1 > 0 && num2 > 0;
+ 
+if (numl == num2) {
+ 
+System.out.print("num1 matches num2");
+ 
+} else if (numl > num2) {
+ 
+System.out.print("numl too high"); } else {
+ 
+assert num1 < num2;
+ 
+System.out.print("num2 too high");
+ 
+}
+ 
+}
+ 
+And the commands:
+ 
+javac Matcher.java
+ 
+java -ea Matcher 2-2
+ 
+8019
+ 
+2580190-135
+ 
+What is the result?
+ 
+num1 too high
+ 
+num2 too high
+ 
+num1 matches num2 
+ 
+An exception is thrown at runtime.
+_______________________________________________________
+ANS:num1 matches num2 
+-------------------------------------------------------------
+3.What will be the output of the following Java program?
+ 
+import java.util.*;
+ 
+class LOCALE_CLASS
+ 
+{
+ 
+public static void main(String args[])
+ 
+{
+ 
+Locale obj = new Locale ("INDIA"); System.out.print(obj.getCountry());
+ 
+19
+ 
+}
+ 
+}
+ 
+30190-10-
+ 
+(a) India
+ 
+135102-2024/02/06-200
+ 
+(b) INDIA
+ 
+580
+ 
+(c) Compilation Error
+ 
+(d) Nothing is displayed
+_____________________________________________________________________________________________________________
+ANS:Nothing is displayed
+_____________________________________________________________________
+4.WHICH CLASSES ARE TO BE USED WHLE USING THE CHARACTER FORMAT RATHER THAN THE BYTE FORMAT   OPTIONS  ARE FILE READESR ,FILE WRITER ,FILEINPUT,FILEOUTPUT
+
+ANS: FILE READER,FILE WRITER
+__________________________________________________________________________________________
+5.WHAT DO YOU DO IF AN OBJECT SHOULD NOT OR DOESNOT NEED TO NEED TO SEARALIZED OPTIONS ARE MARK PRESISTANCE,MARK NON SEIRALIZED,MARK TRANSISTENT MARK NON PERISTANT
+ANS: MARK TRANSIENT
+____________________________________________________________________________________________________
+6.public class OutputSuperClass ( public OutputSuperClass () { System.out.println("Super");
+ 
+public class OutputSubClass extends OutputSuperClass { public OutputSubClass () ( System.out.println("Sub 1");
+ 
+public OutputSubClass (int x) { System.out.println("Sub 2"):
+ 
+public OutputSubClass (int x, int y) { System.out.println("Sub 3");
+ 
+public static void main(String[] args) { new OutputSubClass (1);
+ 
+What is the result?
+ 
+Super- Sub 2
+ 
+O Super
+ 
+Sub 3
+ 
+O Sub 2
+__________________________________________________________________________________
+ANS:Super- Sub 2
+________________________________________________________________________________________________
+7.WHICH ANNOTATION REPRESENTS AN OPERATION THAT ACCEPTS A SINGLE INPUT ARGUMENT AND RETURN THE RESULT OPTIONS ARE @PRDICATE,2CONSUMER,@SUPPLIER,@FUNCTION
+ANS:Function
+______________________________________________________
+8.Given the code fragment:
+ 
+Stream List<String>> iStr= Stream.of ( Arrays.asList ("1", "John"), Arrays.asList ("2", null));
+ 
+Stream<<String> nInSt = iStr.flatMapToInt ((x) -> x.stream()); nInSt.forEach (System.out:: print);
+ 
+What is the result? the result?
+ 
+
+ 
+O1John2null
+ 
+A NullPointerException is thrown at run-time. 13510
+ 
+A compilation error occurs.
+ 
+ANS:1John2null
+_________________________________________________
+ 9.import java.io.*;
+ 
+public class FileManipulator (
+ 
+public static void main (String[] args) {
+ 
+String strRead = null;
+ 
+try (RandomAccessFile file =new RandomAccessFile ("email.txt", "rws")) {
+ 
+file.seek(21);
+ 
+file.writeUTF ("PRIORITY: HIGH");
+ 
+strRead file.readLine(); )catch (Exception ex) {
+ 
+System.err.println(ex);
+ 
+System.out.println(strRead);
+ 
+And the contents of the email.txt file:
+ 
+TO: admin@company.com FROM: customer@home.net
+ 
+SUBJECT: LOGIN ISSUE
+ 
+BODY: Forgot my password. Please reset!
+ 
+What is the result?
+ 
+Ohome.net
+ 
+null 
+ 
+java java.io.EOFException
+ 
+ 
+25102-202 OTO: admin@company.com PRIORIT HIGHhome.net
+ 
+Compilation fails.
+___________________________________________________
+ANS:java.io.EOFException
+________________________________________________________________
+10.WHICH INETERFACE IS USED TO CREATE A STREAM FOR THE CUSTOM RESOURCES OPTIONS ARE SPLITERATOR,ITERATOR,LISTITERATOR,ITERABLE
+ANS:Spliterator
+__________________________________________________________________
+11.WHICH OF THE FOLLOWING FUNCTIONS ARE HIGHERORDER FUNCTIONS  
+ANS:FILTER
+    MAP
+    REDUCE
+_________________________________________
+12.What will happen to the below code when compiled?
+ 
+interface WithDefinitionsInter { default void definedMeth(){
+ 
+System.out.println("inside interface"); }
+ 
+class WithDefinitionsImpl implements WithDefinitionsInter {
+ 
+public void definedMeth() { super.definedMeth(); System.out.println("inside class"); }
+ 
+}
+ 
+public class QuizDef {
+ 
+public static void main(String par[]) {
+ 
+WithDefinitionsInter withDef = new WithDefinitionsImpl(); withDef.definedMeth();
+ 
+ 
+The code will not get compiled because the interface does not even have a single abstract method
+ 
+The code will not get compiled because the method definedMeth() is undefined in Object class 00190-
+ 
+The code will not get compiled because the interface holds method definition
+ 
+The code will get compiled and executed successfully
+______________________________________________________________________________________________
+ANS: The code will get compiled and executed successfully
+______________________________________________________________________
+13.What will happen to the below code when compile and execute?
+ 
+public interface Deduction (
+ 
+static void deduct() {
+ 
+System.out.println("deduct");
+ 
+}
+ 
+@SuppressWarnings("")
+ 
+public class Customer implements Deduction { public void serviceCharge() (
+ 
+//deduction functionality being invoked deduct();
+ 
+}
+
+public class TechSol {
+ 
+public static void main(String[] args) { new customer().serviceCharge();
+
+OPTIONS:
+ 
+The code will not get compiled because the static method of interface is not accessed using interface name
+ 
+The code will not get compiled as the method deduct() is undefined for the Customer class -258019 Cus
+
+ 
+Will get executed successfully, leaving the output "deduct"
+ 
+
+Will lead to run time ambiguity as t 2 as the static method is not accessed
+ 
+using interface name
+has context menu
+_________________________________________________________________
+ANS:Will get executed successfully, leaving the output "deduct"
+_____________________________________________________________________
+14.3. import java.io.*;
+ 
+14. class Food implements Serializable (int good = 3;}
+ 
+15. class Fruit extends Food {int juice = 5;}
+ 
+16. public class Banana extends Fruit {
+ 
+17. int yellow = 4;
+ 
+18. public static void main(String[] args) {
+ 
+19. Banana b = new Banana (); Banana b2 = new Banana();
+ 
+20. b.serializeBanana(b); // assume correct serialization
+ 
+21. b2b.c deserializeBanana (); // assume correct
+ 
+22. System.out.println("restore "+b2.yellow+ b2.juice+b2.good); 24. }
+ 
+25. // more Banana methods go here 50.)
+ 
+What is the result?
+restore 400
+ 
+restore rare-403) 35102-2024/02/06 2580 3019號
+ 
+restore 453
+ 
+Compilation pilation 58019 fails
+ 
+
+ 
+An exception is thrown at runtime.
+_______________________________________________
+ANS: RESTORE453
+________________________________________________________________
+Import java.io.*;
+ 
+12. public class DOS {
+ 
+13. public static void main(String[] args) {
+ 
+14. File dir new File("dir");
+ 
+15. dir.mkdir();
+ 
+16. File f1 = new File(dir, "f1.txt");
+ 
+17. try {
+ 
+18. fl.createNewFile();
+ 
+19.) catch (IOException e) {; }
+ 
+20. File nowDir = new File("newDir");
+ 
+21. dir.renameTo (newDir);
+ 
+22.)
+ 
+23.)
+ 
+Which statement is true?
+ 
+Compilation fails.
+ 
+The file system has a new empty directory named dir.
+ 
+The file system has a new empty directory'named newDir.
+ _________________________________________________________________________________
+ANS:THE FILE SYSTEM HAS A DIRECTORY NAMED NEWdIR,CONTAINING A FILEF1.TXT.
+_________________________________________________________________
+List<Integer> values = Arrays.asList (1, 2, 3); values.stream () .map(n n*2) //line n1
+ 
+peek (System.out::print) //line n2
+ 
+counts
+ 
+What is the result?
+  
+246.
+ThE code produces no output. 
+A compilation error occurs at line n1.
+ 
+A compilation error occurs at line n2.
+________________________________________________
+ANS:246
+________________________________________
+WHICH INTERFACE USED TO CREATE YOUR OWN COLLECTION OPTIONS ARE COLLECTION,COLLECTOR,SPLITRETAOR,ILETATOR
+
+ANS: Collection interface
+__________________________________________________________________________________
+
+SELECT ALL THAT ARE REQUIRED FOR THE STREAM PIPELINE OPTIONS ARE SOURCE,ZERO OR MORE INTERMEDIATE OPERATOR,TRMINAL OPERATOR,DESTINATION,DATA CONTAINERS
+ANS:Source: 
+    Zero or More Intermediate Operations
+   Terminal Operation:
+________________________________________________________________________________
+SELECT ALL STATEFUL INTERMEDIATER OPERATIONS OPTIONS ARE DISTINTCT(),SORTED(),LIMIT(),UNSORTED(),FLATMAP(),FILETR()
+ 
+ANS:distinct()
+    sorted()
+    limit()
+______________________________________________________________________________________
+SELECT ALL THE SPLITERATOR CHARACTERSTICS STATE OF A STRAEM OPTIONS ARE ORDERED,UNORDERED,DISTINCT,SORTED,UNSORTED,CONCURRENT
+
+ANS;ORDERED
+   DISTINCT
+   SORTED
+   CONCURRENT
+______________________________________________________________________
+public class DateTimeSample {
+public static void main(String[] args) {
+		Period period=Period.of(1, 5, 2001);
+		System.out.println(period.getDays()+"\t"+period.getMonths());
+	}
+	
+ 
+}
+ 
+ANS;:2001 5
+_______________________________________________
+if we intend a SAM interface to be used by lambdas.we can optionally mark it as
+ANS;@functionalinterface'
+_________________________________________________________________
+WHICH SYNTAX REPEREENTS  ACLASS CONSTRUCTOR REFERENCE OPTIONS ARE OBJECT:: INSTABCE METHOD,CLASS :: STATIC METHOD,CLASS :: INSTANCE METHOD,CLASS:: NEW
+ANS: Class::new
+_______________________________________________________________________________________________
+public class VarScope {
+ 
+int var;
+ 
+public static void main (String[] args) {
+ 
+int var = 10;
+ 
+VarScope scope = new VarScope();
+ 
+scope.var = var + 2; scope.adjustVar(scope.var + 2);
+ 
+System.out.println("var = 11 + var);
+ 
+private void adjustVar(int var) { var += 2;
+ 
+}
+ 
+}
+ 
+What is the result?
+ 
+
+var = 16
+ 
+var =12
+ 
+var = 14 
+ 
+var = 10
+
+ANS: VAR=10
+______________________________________________________________
+which annotation represents a supplier of result?
+Ans: @Supplier
+__________________________________________________________
+Which are the following expressions will compile
+ 
+number1, number2->number1.isEvenNumber() 
+
+number1-{ return number1.isEvenNumber()} 
+ 
+(int númber1, int number2)->number2.isEvenNumber()
+ 
+(number1, number2)->number1.isEvenNumber() 
+
+___________________________________________
+ANS:
+(number1, number2)->number1.isEvenNumber() 
+
+number1-{ return number1.isEvenNumber()} 
+___________________________________________________________________________
+WHICH OF THE FOLLOWING IS AN ENUMURATION THAT HOLDS TIME UNITS SUCH AS HALFDAYS ,HOURS OPTION ARE CHRONEUNIT,GETtIMR,dATETIME,getDuration
+
+Ans: ChronoUnit.
+____________________________________________________________________________
+
+public class VarScope {
+	 int i1;
+public static void main(String[] args) {
+	VarScope scope=new VarScope();
+	scope.printVar();// line 1
+	int i2=i1;// line 2
+	int i3=i2;// line 3
+	
+	}
+private void printVar() {
+	System.out.println(i1);//line 4
+}
+}
+_______________________________________________________________________
+Ans: line 2
+__________________________________________________________________________
+select all that are required for the stream pipeline options are source,zero or more intermrdiate operations ,treminal operation,destination,data containers
+
+Ans:Source
+Zero or More Intermediate Operations
+Terminal Operation:
+______________________________________________________________________________________
+public class Computer {
+	 private Computer() {}
+	 class CPU{
+	 private void performWork() {
+		 System.out.println("CPU working !");
+	 }
+	 }
+public static void main(String[] args) {
+ 
+}
+}
+_______________________________________________________________________
+Ans:new Computer().new CPU().performWork();
+_______________________________________________________________________
