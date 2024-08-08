@@ -360,11 +360,11 @@ ANS:246
 ________________________________________
 WHICH INTERFACE USED TO CREATE YOUR OWN COLLECTION OPTIONS ARE COLLECTION,COLLECTOR,SPLITRETAOR,ILETATOR
 
-ANS: Collection interface
+ANS: Collector interface
 __________________________________________________________________________________
 
 SELECT ALL THAT ARE REQUIRED FOR THE STREAM PIPELINE OPTIONS ARE SOURCE,ZERO OR MORE INTERMEDIATE OPERATOR,TRMINAL OPERATOR,DESTINATION,DATA CONTAINERS
-ANS:Source: 
+ANS: Source: 
     Zero or More Intermediate Operations
    Terminal Operation:
 ________________________________________________________________________________
@@ -474,8 +474,8 @@ __________________________________________________________________________
 select all that are required for the stream pipeline options are source,zero or more intermrdiate operations ,treminal operation,destination,data containers
 
 Ans:Source
-Zero or More Intermediate Operations
-Terminal Operation:
+    Zero or More Intermediate Operations
+    Terminal Operation:
 ______________________________________________________________________________________
 public class Computer {
 	 private Computer() {}
@@ -490,4 +490,181 @@ public static void main(String[] args) {
 }
 _______________________________________________________________________
 Ans:new Computer().new CPU().performWork();
+
+which of the following utility class provide ready made redux algorithms that can accumulate summarize and aggergate elements into collections options collections collectors spliterator iterator
+
+ans : collectors
 _______________________________________________________________________
+
+file input output
+streams
+regex
+lamda
+jdbc 
+maven
+junit
+
+______________________________________________________
+file 
+____________________________________________________
+inpuut stream ante read data from the file
+out put stream ante write data from the file
+ these are abstract classes
+objectInputStream /objectOutputstream are searilization and de serailization
+
+
+seralizable it is a marker interface it doesnot contain abstract method.on it
+
+transient: it is a key word it is not searilized
+
+CharArrayWriter :- it is used to write common data to multiple files.
+
+CharArrayReader:- It reads array of character.
+__________________________________________________________________________________________________
+
+jdbc
+________________________________________________________________________
+
+java database conectivity
+
+ODBC -open database connectivity.It comes with the o/s.
+type2 driver-[java prg---driver----database]This is vendor specific.
+type3 driver-[Java prg ---middleware server---Databse] This is vendor specific
+We have to import java.sql package and handle the SQLException.
+
+When we do static data crud (create,read,update,delete) operartion we  use Statement.
+When we do dynamic data crud (create,read,update,delete) operartion we  use PreparedStatement.
+When we work with function,procedure we use CallableStatement.
+
+1)to load the driver
+2)to get connection from DriverManager
+3)Statement()/preparedStatement(pass the sql query)
+4)execute(pass the sql query)/execute();
+
+______________________________________________________________________________________________
+regex
+
+The Java Regex or Regular Expression is an API to define a pattern for searching or manipulating strings.
+It is widely used to define the constraint on strings such as password and email validation. 
+We will be able to test your regular expressions by the Java Regex Tester Tool.
+Java Regex API provides 1 interface and 3 classes in java.util.regex package.
+
+MatchResult interface
+Matcher class
+Pattern class
+PatternSyntaxException class
+
+___________________________________________________________________________________
+
+1.Exception Handling
+2.Sorting and  search
+3.Collection framework
+4.junit(assertions)
+5.jdbc(statement and connection)
+6.Maven
+7.Threading
+8.Oops
+9.i/p,o/p Streams
+10.Date Time API
+11.Garbage collection
+12.Wrapper class
+
+_________________________________________________________________________________________________
+
+Exception handling in java
+
+
+
+_____________________________________________________________________________________________________________________________________________________
+1) byte range---
+	(-128 to 127)
+2) user defined exceptions that extends exception class----
+	(unchecked exception)
+3)which of the following is not checked exception---
+	(ArthimaticException)
+4) Binary Search Time Complexity---
+	(Ologn)
+5) which of the following keywords are not used for exception handling---
+	(Access, exception)
+6) printer question----
+	(Mathews,Suzanne,John Queue)
+7) public class Fisherman if(f is instance of p)--- 
+	(f-p,w-f)
+8) Local repositorty stores --- 
+	(${Local.home}/m2/repository))
+9) which sorting will has two sub lists---
+	(selection sort)
+10) which concept will hide some info and only show essential info----
+	(Abstraction)
+11) which access modifier is used when u do not inherit the class by other and which keyword is used to create interface---
+	(final, interface)
+12) which of the following method is used for instantiating objects of a class----
+	(constructor)
+13) which of the following methods can be accesed using method reference----
+	(static methods, instance methods)
+14) which of the following is relavent to transient ---- 
+	(serialization)
+15) by which of the following we can achieve synchronization---
+	(Synchronized methods, synchronized block)
+16) Thread(isAlive()) ---- 
+	(false)
+17) Bank question ---- 
+	thread synchronization
+18) in which line the code has error for counting the no.of ele in linkedlist---
+	(int count=1)
+19) meth() function question --- 
+	(42, 3, 12)
+20) Exception handling code---
+	(Exception for parent class exception is caught before the child class)
+21) Files Question of "Hello world"
+	 ----(H)
+22) which interface is not allowed duplicates values and should be print natural order---
+	(Set)
+23) which is the function works on map---
+	(put())
+24) which elementsare used to identify a dependent artifact in a pom.xml file? 
+	(version, groupid, artifactid)
+25) what is true about mvn clean? 
+	(It cleans up artifacts created by prior builds)
+26) which of the following scope is used only when the dependency is of pom type? 
+	(import)
+27) which plugin uses the information in the pom to determine the proper location for the artifact within the local repository? 
+	(maven-install-plugin)
+28) JVM is not able to to allocate memory to create object Question? 
+	(Jvm will throw error and program abort as this situation cannot be handled by programming)
+29) Boxing----
+	Integer.valueOf(10)
+30) List.add("paper") ---- 
+	(A Runtime Exception is thrown )
+31) vanilla, chocolate ?
+	An arrayOutofboundsException
+32) Interface Jumper---
+	cat is a jumper, dog is a animal, Beagle has a tail
+33) List.set(0, "Data Structures")
+	Compilation Error: cannot convert from Object to boolean in line 2
+34) public class score  implements Comparable() ----
+	public int compareTo(Score other){/*more code here*/}
+35) One question regarding date?
+	LocalDate currentdate = new LocalDate.now()
+36) thread t = new Thread() System.out.println(t.isAlive())	
+	false
+37) what are the eligible metods for interfaces? (search for answer)
+	boolean getAmount(boolean[] args) 
+	public static void main(String[]) args
+	public void main(String[] args)
+	protected void getAmount();
+	private double getAmout()
+ 
+38) public static threads extends Thread{
+	public static void main(String[] args){
+	Thread t = Thread.currentThread();
+	System.out.println(t);
+	}
+	}
+	ans: Thread[main, 5, main]
+39) which method is required for loading a database driver in jdbc?
+	class.forName() or registerDriver()
+40) which of the following is used to limit the number of rows returned?
+	setMaxRows(int i)
+41) what is the return type of the hashCode()?
+	int
