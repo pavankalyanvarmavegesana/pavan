@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.insurancemanagment.InsuranceManagmentSystem.Repository.AdminService;
+
+import com.insurancemanagment.InsuranceManagmentSystem.Service.AdminService;
 import com.insurancemanagment.InsuranceManagmentSystem.dto.Admin;
 
 @RestController
@@ -38,13 +39,14 @@ public class AdminController {
 		return adminService.findbyid(id);
 	}
 
-	@PostMapping(value = "/verifybyphone")
-	public ResponseEntity<Admin> verifyAdmin(@RequestParam long phone,
+	@PostMapping(value = "/admin/login")
+	public ResponseEntity<Admin> verifyAdmin(@RequestParam String email,
 			@RequestParam String password) {
 		System.out.println("exicuted");
-		return adminService.verifyAdmin(phone, password);
+		return adminService.verifyAdmin(email, password);
 	}
 	
+
 	@DeleteMapping(value = "/admin/deletebyuserid/{id}")
 	public ResponseEntity<String> deleteByUSerId(@PathVariable Integer id) {
 		adminService.deleteByUSerId(id);

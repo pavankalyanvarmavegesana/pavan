@@ -16,24 +16,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class Policies {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int policyId;
-	
     private String policyName;
-	
     private String policyType;
-	
     private double premiumAmount;
-	
 	@ManyToOne
 	@JoinColumn(name="admin_id")
 	@JsonIgnore
 	private Admin admin;
+	@OneToMany(mappedBy = "policies")
+	private List<PolicyBooking> policybooking;
+	
+	
+	
+	public Policies() {
+		
+	}
+	
 	public Policies(int policyId, String policyName, String policyType, double premiumAmount, String policyHolderName) {
 		super();
 		this.policyId = policyId;
@@ -65,9 +70,23 @@ public class Policies {
 	public void setPremiumAmount(double premiumAmount) {
 		this.premiumAmount = premiumAmount;
 	}
+	public Admin getAdmin() {
+		return admin;
+	}
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+	public List<PolicyBooking> getPolicybooking() {
+		return policybooking;
+	}
+	public void setPolicybooking(List<PolicyBooking> policybooking) {
+		this.policybooking = policybooking;
+	}
 	
-	@OneToMany(mappedBy = "policies")
-	private List<PolicyBooking> policybooking;
+	
+	
+	
+	
 }
 
 

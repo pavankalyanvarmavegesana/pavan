@@ -1,5 +1,6 @@
 package com.insurancemanagment.InsuranceManagmentSystem.dto;
 
+import java.security.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -24,9 +25,38 @@ public class PolicyBooking {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String customer_name;
+    //private int policy_Id;
 	private long customer_phone;
 	private String customer_email;
 	private double policy_amount;
+	private String time_of_booking;
+	private String status;
+	@ManyToOne
+	@JoinColumn
+	@JsonIgnore
+	private User user;
+	@ManyToOne
+	@JoinColumn
+	@JsonIgnore
+	private Policies policies;
+	
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Policies getPolicies() {
+		return policies;
+	}
+
+	public void setPolicies(Policies policies) {
+		this.policies = policies;
+	}
+
 	public PolicyBooking(int id, String customer_name, long customer_phone, String customer_email, double policy_amount,
 			String time_of_booking, String status) {
 		super();
@@ -38,6 +68,11 @@ public class PolicyBooking {
 		this.time_of_booking = time_of_booking;
 		this.status = status;
 	}
+	
+	public PolicyBooking() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -80,14 +115,5 @@ public class PolicyBooking {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	private String time_of_booking;
-	private String status;
-	@ManyToOne
-	@JoinColumn
-	@JsonIgnore
-	private User user;
-	@ManyToOne
-	@JoinColumn
-	@JsonIgnore
-	private Policies policies;
+	
 }

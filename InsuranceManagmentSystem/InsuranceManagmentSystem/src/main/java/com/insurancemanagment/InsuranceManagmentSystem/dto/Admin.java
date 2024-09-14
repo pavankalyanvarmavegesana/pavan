@@ -22,11 +22,15 @@ public class Admin {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	
 	private long phone;
 	private String email;
 	private String password;
 	@OneToMany(mappedBy = "admin")
 	private List<Policies> Policies;
+	public Admin() {
+		
+	}
 	public Admin(int id, String name, long phone, String email, String password
 			) {
 		super();
@@ -36,6 +40,12 @@ public class Admin {
 		this.email = email;
 		this.password = password;
 	
+	}
+	public List<Policies> getPolicies() {
+		return Policies;
+	}
+	public void setPolicies(List<Policies> policies) {
+		Policies = policies;
 	}
 	public int getId() {
 		return id;
